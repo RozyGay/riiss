@@ -290,7 +290,6 @@ a.newpage {
 		rgba(139, 164, 174, 0)
 	);
 	transform-origin: left center;
-	animation: riiss-header-line 620ms var(--riiss-ease-soft) 120ms both;
 }
 
 #header h1,
@@ -328,22 +327,33 @@ a.newpage {
 	top: 0;
 	color: #d7e3ea;
 	letter-spacing: 2.2px;
-	animation: riiss-fade-up 520ms var(--riiss-ease-soft) 60ms both;
+	animation: none;
 }
 
 #header h2 span {
 	color: transparent !important;
 	position: relative;
+	font-size: 0 !important;
+	line-height: 0 !important;
+	text-shadow: none !important;
 }
 
 #header h2 {
 	margin-top: 8px;
 	max-height: none;
-	font-size: 1em;
-	letter-spacing: 0.15px;
+	font-size: 0 !important;
+	line-height: 0 !important;
+	letter-spacing: 0;
+	color: transparent !important;
+	position: relative;
+	text-shadow: none !important;
 }
 
 #header h2 span::after {
+	content: none;
+}
+
+#header h2::after {
 	content: "Архивная и информационная юрисдикция уровня межзональной координации";
 	position: absolute;
 	left: 0;
@@ -358,7 +368,7 @@ a.newpage {
 	letter-spacing: 0.42px;
 	text-transform: uppercase;
 	color: #aebfcc;
-	animation: riiss-fade-up 560ms var(--riiss-ease-soft) 130ms both;
+	animation: none;
 }
 
 #search-top-box-form input[type="submit"] {
@@ -436,6 +446,7 @@ a.newpage {
 	border-color: var(--riiss-rule);
 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.36);
 	background: #111a22 !important;
+	z-index: 50;
 }
 
 #top-bar ul li a {
@@ -508,19 +519,19 @@ a.newpage {
 	border-radius: 0;
 	box-shadow: none;
 	background: #121b24 !important;
-	animation: riiss-fade-up var(--riiss-dur-slow) var(--riiss-ease-soft) both;
+	animation: none;
 }
 
 #side-bar .side-block:nth-child(1) {
-	animation-delay: 60ms;
+	animation-delay: 0ms;
 }
 
 #side-bar .side-block:nth-child(2) {
-	animation-delay: 120ms;
+	animation-delay: 0ms;
 }
 
 #side-bar .side-block:nth-child(3) {
-	animation-delay: 180ms;
+	animation-delay: 0ms;
 }
 
 #side-bar .side-block:hover {
@@ -579,8 +590,8 @@ a.newpage {
 	border-left: 1px solid var(--riiss-rule-soft);
 	background: #0f161d;
 	position: relative;
-	animation: riiss-fade-up var(--riiss-dur-slow) var(--riiss-ease-soft) both;
-	animation-delay: 40ms;
+	animation: none;
+	animation-delay: 0ms;
 	will-change: opacity, transform;
 }
 
@@ -722,6 +733,100 @@ div.blockquote {
 	padding: 0 1em;
 }
 
+#page-content pre,
+#page-content code,
+#page-content .code,
+#page-content tt {
+	background: #131b24 !important;
+	color: #c7d6de !important;
+	border: 1px solid #2b3945;
+}
+
+#page-content pre,
+#page-content .code {
+	padding: 0.75em 0.9em;
+	overflow-x: auto;
+	white-space: pre;
+}
+
+#page-content code,
+#page-content tt {
+	padding: 1px 4px;
+	border-radius: 2px;
+}
+
+#page-content table th,
+#page-content table td {
+	background-color: #131c24;
+	color: #c7d5de;
+	border-color: #33414b;
+}
+
+#page-content table th {
+	background-color: #273b48;
+	color: #d6e4eb;
+}
+
+#page-content .page-info,
+#page-content .page-watch-options {
+	color: #8ca1ad;
+}
+
+#main-content .page-options-bottom {
+	margin-top: 0.8rem;
+	padding-top: 0.7rem;
+	border-top: 1px solid var(--riiss-rule-soft);
+	color: #8fa4af;
+}
+
+#main-content .page-options-bottom a,
+#main-content #page-options-bottom a,
+#main-content #page-options-container a,
+#main-content .options a,
+#main-content .page-watch-options a,
+#main-content #page-info a {
+	display: inline-block;
+	margin: 0 0.18rem 0.2rem;
+	padding: 0.18rem 0.5rem;
+	border: 1px solid #32414d;
+	border-radius: 2px;
+	background: #17212b;
+	color: #b9ccd6 !important;
+	font-size: 0.84em;
+	text-decoration: none;
+}
+
+#main-content .page-options-bottom a:hover,
+#main-content #page-options-bottom a:hover,
+#main-content #page-options-container a:hover,
+#main-content .options a:hover,
+#main-content .page-watch-options a:hover,
+#main-content #page-info a:hover {
+	background: #22323e;
+	color: #e0ecf2 !important;
+	border-color: #466070;
+}
+
+#main-content #page-info,
+#main-content #page-options-container,
+#main-content #page-options-bottom,
+#main-content .page-watch-options {
+	color: #8da2ad;
+}
+
+#main-content .page-tags a {
+	border: 1px solid #32414d;
+	background: #17212b;
+	color: #b9ccd6 !important;
+	padding: 1px 6px;
+	margin: 0 0.2rem 0.2rem 0;
+}
+
+#main-content .page-tags a:hover {
+	background: #22323e;
+	color: #e0ecf2 !important;
+}
+
 .wiki-content-table,
 .riiss-table {
 	width: 100%;
@@ -753,6 +858,17 @@ div.blockquote {
 	background: #151f29;
 }
 
+.scp-image-block {
+	border-color: #32414d;
+	background: #121b24;
+}
+
+.scp-image-block .scp-image-caption {
+	background: #18232d;
+	border-top-color: #32414d;
+	color: #9bb0bb;
+}
+
 #footer {
 	background: #0b1218;
 	color: #8299a5;
@@ -760,6 +876,10 @@ div.blockquote {
 
 #footer a {
 	color: #aec2cc;
+}
+
+.license-area {
+	color: #7f95a1;
 }
 
 .riiss-meta {
@@ -827,7 +947,7 @@ div.blockquote {
 	content-visibility: auto;
 	contain-intrinsic-size: 1px 240px;
 	will-change: transform, box-shadow;
-	animation: riiss-fade-up 520ms var(--riiss-ease-soft) both;
+	animation: none;
 }
 
 .riiss-box:hover {
@@ -836,11 +956,11 @@ div.blockquote {
 }
 
 .riiss-box:nth-of-type(2n) {
-	animation-delay: 70ms;
+	animation-delay: 0ms;
 }
 
 .riiss-box:nth-of-type(3n) {
-	animation-delay: 120ms;
+	animation-delay: 0ms;
 }
 
 .riiss-box-header {
@@ -1212,7 +1332,7 @@ details.riiss-recovery .riiss-recovered-text {
 		right: 7px;
 	}
 
-	#header h2 span::after {
+	#header h2::after {
 		max-width: 24rem;
 		font-size: 0.67em;
 	}
@@ -1268,7 +1388,7 @@ details.riiss-recovery .riiss-recovered-text {
 		font-size: inherit;
 	}
 
-	#header h2 span::after {
+	#header h2::after {
 		max-width: 18rem;
 		font-size: 0.65em;
 	}
