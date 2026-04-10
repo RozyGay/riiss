@@ -12,6 +12,6 @@ cp -a fonts images dist
 
 # Copy and minify CSS
 mkdir -p dist/css
-cp sigma.css dist/css
+cp riiss.css dist/css
 npm run minify
-[[ -f dist/css/sigma.min.css ]]
+[[ -f dist/css/riiss.min.css ]]
